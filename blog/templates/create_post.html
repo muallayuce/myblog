@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+
+
+{% block content %}
+
+<form method="post"  action="{% url 'create_post' %}">
+    {% csrf_token %}
+    <div class="form-field">
+        <label for="{{ form.title.id_for_label }}">Post Title:</label>
+        {{ form.title }}
+    </div>
+    <div class="form-field">
+        <label for="{{ form.slug.id_for_label }}">Slug:</label>
+        {{ form.slug }}
+    </div>
+    <div class="form-field">
+        <label for="{{ form.content.id_for_label }}">Content:</label>
+        {{ form.content }}
+    </div>
+    <div class="form-field">
+        <label for="{{ form.category.id_for_label }}">Category:</label>
+        {{ form.category }}
+    </div>
+    <button class="bt" type="submit">Create Post</button>
+
+</form>
+
+
+{% endblock %}
+

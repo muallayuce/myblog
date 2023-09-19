@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>Category: {{ post.category }}</p>
+  <h1 class= "my">{{ post.title }}</h1>
+  <p class= "mt">{{ post.pub_date }}</p>
+  <div class="content">{{ post.content|linebreaksbr }}</div>
+  
+
+  <p>Author: {{ post.user.username }}</p>
+  <p>Logged in as: {{ user.username }}</p>
+  
+
+  {% if user.is_authenticated and post.user == user %}
+  <a href="{% url 'delete_post' slug=post.slug %}" class="btn btn-danger">Delete Post</a>
+{% endif %}
+
+ 
+{% endblock %}

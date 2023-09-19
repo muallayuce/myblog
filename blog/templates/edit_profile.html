@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <style>
+    /* Style the form container */
+.edit-profile-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the form header */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(42, 55, 200);
+}
+
+/* Style the form fields and labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: rgb(86, 20, 173);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+  color: rgb(68, 26, 218);
+}
+
+/* Style the form submit button */
+.btn-save {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+  <div class="edit-profile-container">
+    <h2>Edit Profile</h2>
+    <form method="post" class="edit-profile-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn-save">Save Changes</button>
+    </form>
+  </div>
+{% endblock %}

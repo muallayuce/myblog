@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+   
+<div class="container">
+  <form id="contactForm" method="post" action="{% url 'contact' %}">
+    {% csrf_token %}
+
+    <label class="contact" for="fname">First Name</label>
+    <input class="cnt" type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+    <label class="contact" for="lname">Last Name</label>
+    <input class="cnt" type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+
+    <label class="contact" for="country" style="margin-bottom: 20px; color: blueviolet;">Country</label>
+    <select class="cnt" id="country" name="country">
+      <option value="netherlands">Netherlands</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="other">Other</option>
+    </select><br>
+
+    <label class="contact" for="message">Message</label>
+    <textarea class="cnt" id="message" name="message" placeholder="Write your message here.." style="height: 200px; width:500px;"></textarea><br>
+
+    
+    <input class="mer" type="button" value="Clear" onclick="clearForm()">
+    <input class="mer" type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  function clearForm() {
+      // Get the form element by its ID
+      var form = document.getElementById("contactForm");
+  
+      // Reset the form to clear all input fields
+      form.reset();
+  }
+</script>
+  
+{% endblock %}

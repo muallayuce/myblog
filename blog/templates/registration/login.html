@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<head>
+  <style>
+    
+
+/* Style the form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Style the form header */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(42, 55, 200);
+}
+
+/* Style the form fields and labels */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: rgb(86, 20, 173);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+  color: rgb(35, 11, 169);
+  background-color: rgb(190, 158, 235);
+}
+/* Style the form submit button */
+button[type="submit"] {
+  background-color: #58079b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #af7dec;
+}
+
+  </style>
+</head>
+
+<!-- login.html -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
+{% endblock %}

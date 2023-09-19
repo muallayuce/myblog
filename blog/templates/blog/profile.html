@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+
+        .card {
+            width: 350px;
+            height: 470px;
+            background-color: #fff;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .info {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e1dede;
+            background-color: #e5e5e5;
+        }
+
+        .info span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #savebutton {
+            height: 30px;
+            width: 80px;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            background-color: #000;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .forms {
+            padding: 15px;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .inputs span {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .inputs input {
+            height: 40px;
+            padding: 0px 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <div class="card">
+        <div class="info">
+            <span>Edit form</span>
+            <button id="savebutton">Edit</button>
+        </div>
+        <div class="forms">
+            <div class="inputs">
+                <span>First Name</span>
+                <input type="text"  id="firstName" value="John">
+            </div>
+            <div class="inputs">
+                <span>Last Name</span>
+                <input type="text" id="lastName" value="Doe">
+            </div>
+            <div class="inputs">
+                <span>Email</span>
+                <input type="text" id="email" value="john.doe12@gmail.com">
+            </div>
+            <div class="inputs">
+                <span>UserName</span>
+                <input type="text" id="username" value="johndoe12">
+            </div>
+            <div class="inputs">
+                <span>Country</span>
+                <input type="text" id="country" value="United States">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('editButton').addEventListener('click', function () {
+        document.getElementById('firstName');
+        document.getElementById('lastName');
+        document.getElementById('email');
+        document.getElementById('username');
+        document.getElementById('country');
+        this.style.display = 'none'; // Hide the Edit button
+    });
+</script>
+
+{% endblock %}

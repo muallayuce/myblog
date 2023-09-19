@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+</head>
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- About Me Section -->
+            <div class="side" style= "margin:40px; padding-top:100px; display:box; color:rgb(124, 103, 226)">
+                <h2>About Us</h2>
+                <p>Welcome to our website. We are a team of dedicated individuals...
+
+                    Feel free to contact us if you have any questions or inquiries.</p>
+            </div>
+        </div>
+        
+        <div class="col-md-8">
+            <!-- Blog Posts Section -->
+            <h1 style="margin-bottom: 40px; color: SlateBlue;">Blog Posts</h1>
+            {% if user.is_authenticated %}
+
+            <a href="{% url 'create_post' %}" class="btn btn-primary" style="background-color: SlateBlue;">Create New Post</a> 
+            
+            {% endif %}
+          
+
+            <div class="main flex-container post-list">
+                {% for post in posts %}
+                    <div class="post-container">
+                        <div class="post-item">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-title">{{ post.title }}</a>
+                            <p class="post-content">{{ post.content|linebreaksbr  }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

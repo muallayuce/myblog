@@ -1,0 +1,173 @@
+/* styles.css */
+
+
+/* Apply styles to Contact Page */
+
+.mtg {
+    width: 80%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #b59cdf;
+    
+}
+
+.contact {
+    margin-bottom: 20px; 
+    color: blueviolet;
+}
+
+.cnt {
+    border-radius: 4px;
+}
+
+.cnt:hover {
+    background-color: #95b3d2;
+}
+
+.mer {
+margin-bottom: 20px;
+border-radius: 8px;
+background-color: rgb(123, 123, 208);
+color: rgb(57, 27, 208);
+}
+
+.mer:hover {
+    background-color: #791313;
+    color: #ccc;
+}
+
+/* Apply styles to the entire body */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to new lines */
+    justify-content:space-evenly; /* Add this property */
+    margin-top: 20px;
+    
+    
+}
+
+.flex-item {
+    flex: 1;
+    padding: 50px;
+    border: 1px solid #a42626;
+    margin: 50px;
+   
+}
+
+
+/* Style for the list of blog posts */
+
+.post-list {
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+    
+    
+}
+
+/* Style for each individual blog post item */
+
+.post-item {
+    margin-top: 20px;;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+
+}
+
+/* Style for the blog post title link */
+.post-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #5639c1;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Style for the blog post content */
+.post-content {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    height:200px;
+    text-decoration: none;
+    overflow: auto;
+    background-color: rgb(179, 179, 232);
+    border-radius: 8px;
+}
+
+
+/* Style the footer */
+footer {
+    background-color: #1e6490;
+    color: #201e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+/* Style the footer text */
+footer div {
+    margin: 0;
+    font-size: 20px;
+}
+
+/* Add some hover effect for fun */
+footer:hover {
+    background-color: #791313;
+}
+
+/* Apply styles to list items */
+ul {
+    list-style-type: square;
+}
+
+/* Apply styles to create_post items */
+
+
+.form-field {
+    color: #ec7813;
+    margin: 20px;
+
+}
+
+.bt {
+    border-radius: 8px;
+    background-color: #053e03;
+    color: #87eab4;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.bt:hover {
+    background-color: #041b78;
+    color: #ccc;
+}
+
+.my {
+    color: #8ebad6;
+    margin-bottom: 20px;
+    background-color: #5639c1;
+    display: flex;
+    justify-content: center;
+}
+
+.mt {
+    color: #791313;
+}
+
+.content {
+    margin-bottom: 20px;
+}
+
+

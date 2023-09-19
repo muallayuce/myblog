@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Art Category</h1>
+    <p>Total Art Category Posts: <span class="badge bg-primary rounded-pill">{{ art_post_count }}</span></p>
+    
+    <div class="col-md-12">
+       
+        
+        {% if user.is_authenticated %}
+    
+        <a href="{% url 'create_post' %}" class="btn btn-primary" style="background-color: SlateBlue;">Create New Post</a> 
+        
+        {% endif %}
+      
+        <div class="main flex-container post-list">
+            {% for post in art_posts %}
+                <div class="post-container">
+                    <div class="post-item">
+                        <a href="{% url 'post_detail' post.slug %}" class="post-title">{{ post.title }}</a>
+                        <p class="post-content">{{ post.content }}</p>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+

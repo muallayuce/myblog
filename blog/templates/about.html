@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+
+{% block content %}
+
+<head>
+    <style>
+        h1 {
+            color:rgb(189, 13, 13);
+            margin-left:20px;
+
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        .nav-link  {
+            color:chocolate;
+            margin-left:30px;
+            background-color:green;
+            display:flex;
+            height:35px;
+            width:200px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom:50px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+    <h1>About Us</h1>
+    <div class="df">
+        <p>Welcome to our website. We are a team of dedicated individuals...</p>
+        <p>Feel free to contact us if you have any questions or inquiries.</p>
+
+    </div>
+
+    <a class="nav-link" aria-current="page" href="{% url 'contact' %}">Contact</a>
+{% endblock %}
